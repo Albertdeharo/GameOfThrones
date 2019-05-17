@@ -10,7 +10,7 @@
         @csrf
         <div class="form-group">
             <label for="">Nombre</label>
-            <input type="text" name="nombre" class="form-control">
+            <input type="text" name="name" class="form-control">
         </div>
             <button type="submit" class="btn btn-primary">Guardar</button>
     </form>

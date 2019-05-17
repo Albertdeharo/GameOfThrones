@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\House;
 use Illuminate\Http\Request;
 
 class HouseController extends Controller
@@ -34,7 +35,10 @@ class HouseController extends Controller
      */
     public function store(Request $request)
     {
-        return $request->input('nombre');
+        $house = new House();
+        $house->name = $request->input('name');
+        $house->save();
+        return 'Saved';
     }
 
     /**
