@@ -14,7 +14,8 @@ class HouseController extends Controller
      */
     public function index()
     {
-        return 'GAME OF THRONES, CHOOSE YOUR HOUSE !';
+        $houses = House::all();
+        return view('houses.index', compact('houses'));
     }
 
     /**
