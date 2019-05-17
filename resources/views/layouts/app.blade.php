@@ -6,6 +6,10 @@
     </head>
 
     <body>
+        <nav class="navbar navbar-dark bg-primary">
+        <a href="#" class="navbar-brand">Game of Thrones</a>
+        </nav>
+
          @yield('content')
     </body>
 </html>
