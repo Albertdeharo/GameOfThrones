@@ -4,7 +4,11 @@
 @section('title' , 'Houses Create')
 
 @section('content')
-
+    @if ($errors->any())
+        @foreach($errors->all() as $error)
+            <p>{{ $error}}</p>
+            @endforeach
+    @endif
     <div class="container">
     <form class="form-group" method="POST" action="/houses" enctype="multipart/form-data">
         @csrf
