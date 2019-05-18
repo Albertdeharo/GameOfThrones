@@ -70,9 +70,9 @@ class HouseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(House $house)
     {
-        //
+        return view('houses.edit', compact('house'));
     }
 
     /**
@@ -82,9 +82,17 @@ class HouseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, House $house)
     {
-        //
+        $house->fill($request->except('avatar'));
+        if($request->hasFile('avatar')){
+            $file = $request->file('avatar');
+            $name = time().$file->getClientOriginalName();
+            $house->avatar = $name;
+            $file->move(public_path().'/images/', $name);
+        }
+        $house->save();
+        return 'Actualizado';
     }
 
     /**
