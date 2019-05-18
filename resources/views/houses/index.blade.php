@@ -12,7 +12,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{$house->name}}</h5>
                     <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque doloribus numquam itaque possimus mollitia non enim a eum quam. Laudantium debitis asperiores excepturi temporibus reiciendis consequatur labore enim doloribus fugit.</p>    
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <a href="/houses/{{$house->id}}" class="btn btn-primary">Ver más...</a>
                 </div>
             </div>
         </div>
