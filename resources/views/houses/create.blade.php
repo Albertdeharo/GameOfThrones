@@ -5,9 +5,13 @@
 
 @section('content')
     @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
         @foreach($errors->all() as $error)
-            <p>{{ $error}}</p>
+            <li>{{ $error}}</li>
             @endforeach
+            </ul>
+        </div>
     @endif
     <div class="container">
     <form class="form-group" method="POST" action="/houses" enctype="multipart/form-data">
