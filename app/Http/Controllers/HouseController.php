@@ -55,12 +55,13 @@ class HouseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(House $house)
+    public function show($slug)
     {
+        $house = House::where('slug','=',$slug)->firstOrFail();
         //$house = House::find($id);
-
-
         return view('houses.show', compact('house'));
+        
+    
     }
 
     /**
