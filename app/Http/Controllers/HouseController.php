@@ -36,8 +36,15 @@ class HouseController extends Controller
      */
     public function store(Request $request)
     {
+      if($request->hasFile('avatar')){
+          $file = $request->file('avatar');
+          $name = time().$file->getClientOriginalName();
+          $file->move(public_path().'/images/', $name);
+      }
+      
         $house = new House();
         $house->name = $request->input('name');
+        $house->avatar = $name;
         $house->save();
         return 'Saved';
     }

@@ -7,6 +7,7 @@
     <div class="row">
      @foreach($houses as $house)
         <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="images/{{$house->avatar}}" alt="">
             <div class="col-sm">
                 <div class="card-body">
                     <h5 class="card-title">{{$house->name}}</h5>
