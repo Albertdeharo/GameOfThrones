@@ -55,9 +55,9 @@ class HouseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+    public function show(House $house)
     {
-        $house = House::where('slug','=',$slug)->firstOrFail();
+        //$house = House::where('slug','=',$slug)->firstOrFail();
         //$house = House::find($id);
         return view('houses.show', compact('house'));
         
